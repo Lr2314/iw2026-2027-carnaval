@@ -7,8 +7,8 @@
 - *Deadline*: 8 de enero 2027
 - Plan de proyecto (1ª iteración): 15 de octubre 2026
 - Requisitos (1ª iteración): 22 de octubre 2026
-  ## Eventos de Scrum
-  Sesión semanal ~15 minutos
+## Eventos de Scrum
+  - Sesión semanal ~15 minutos
     1. ¿Qué se hizo desde el último punto de control?
 
     2.   ¿Qué se va a hacer esta semana?

@@ -1,30 +1,15 @@
 requisitos
 ```mermaid
 ---
-title: Animal example
+title: Diagrama de clases
 ---
 classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly<br>can swim<br>can dive<br>can help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
+    Agrupación *-- Participante
+    class Agrupación{
+        +nombre
+        +tipo
     }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
+    class Participante {
+        +nombre
     }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
-
 ```

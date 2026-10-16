@@ -12,25 +12,31 @@ classDiagram
     Edición *-- Jornada
     Usuario <|-- Participante
     Usuario <|-- Jurado
+    Jurado --> Actuación : puntúa
+    Jurado .. puntuaciónJurado
+    puntuaciónJurado .. Actuación
     class Agrupación{
-        +nombre
-        +tipo
-        +categoría
+        nombre
+        tipo
+        categoría
     }
     class Participante {
-        +nombre
+        nombre
     }
     class Jornada {
-        +fecha
-        +ronda
+        fecha
+        ronda
     }
     class Pieza {
-        +título
-        +tipo
-        +letra
-        +autor
+        título
+        tipo
+        letra
+        autor
     }
     class Edición {
-        +año
+        año
+    }
+    class Actuación {
+        /puntuaciónTotal
     }
 ```

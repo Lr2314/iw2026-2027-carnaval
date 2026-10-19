@@ -8,7 +8,7 @@ classDiagram
     Agrupación *-- Participante
     Agrupación --> Actuación : lleva a cabo
     Actuación <-- Jornada : incluye
-    Actuación "*"o--"4" Pieza
+    Actuación "*"o--"*" Pieza
     Edición *-- Jornada
     Usuario <|-- Participante
     Usuario <|-- Jurado

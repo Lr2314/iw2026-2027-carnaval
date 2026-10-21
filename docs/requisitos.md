@@ -64,3 +64,12 @@ classDiagram
    - Accesibildiad del sector público
    - LGPD
 8. Gestión de datos sensibles
+```mermaid
+---
+title: Diagrama de casos de uso
+---
+usecase-beta
+    actor Usuario --> inscribe("inscribeAgrupación")
+    Usuario --> consultarDatos
+    actor Jurado --> puntua("puntúaActuación")
+```

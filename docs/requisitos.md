@@ -42,12 +42,12 @@ classDiagram
 ```
 ## Requisitos funcionales
 1. Consultar datos:
-       - Agrupaciones
-       - Piezas
-       - Autores
-       - Letras
-       - Fechas
-       - Resultados
+   - Agrupaciones
+   - Piezas
+   - Autores
+   - Letras
+   - Fechas
+   - Resultados
 2. Inscribir Agrupaciones
 3. Sorteo de fechas
 4. Gestión del jurado
@@ -61,6 +61,6 @@ classDiagram
 4. Software libre
 5. Sostenibilidad documental
 6. Cumplimiento de normativa:
-       - Accesibildiad del sector público
-       - LGPD
-7. Gestión de datos sensibles
+   - Accesibildiad del sector público
+   - LGPD
+8. Gestión de datos sensibles

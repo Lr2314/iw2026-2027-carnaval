@@ -1,7 +1,7 @@
-# Diseño de la aruitectura
+# Diseño de la arquitectura
 ```mermaid
+title Diagrama de Contexto (C4 - Nivel 1) - Sistema del Concurso y Memoria del Carnaval de Cádiz
 C4Context
-    title Diagrama de Contexto (C4 - Nivel 1) - Sistema del Concurso y Memoria del Carnaval de Cádiz
     direction TB
 
     Person(aficionado, "Aficionado / Investigador", "Consulta la información del concurso en curso, fichas de agrupaciones, calendario y la memoria histórica.")

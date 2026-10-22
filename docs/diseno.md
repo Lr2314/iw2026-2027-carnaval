@@ -1,19 +1,26 @@
 # Diseño de la arquitectura
 ```mermaid
-C4Context 
+C4Context
     title Diagrama de Contexto (C4 - Nivel 1) - Sistema del Concurso y Memoria del Carnaval de Cádiz
-    Person(aficionado, "Aficionado / Investigador", "Consulta la información del concurso en curso, fichas de agrupaciones, calendario y la memoria histórica.")
-    Person(agrupacion, "Participante / Agrupación", "Gestiona la inscripción de su agrupación, componentes y consulta resultados.")
-    Person(jurado, "Jurado", "Evalúa las actuaciones de las agrupaciones en cada jornada y emite puntuaciones.")
-    Person(admin, "Personal Municipal (Admin)", "Configura ediciones, aprueba inscripciones, gestiona el sorteo y valida material histórico.")
 
-    System(sistemaCarnaval, "Plataforma Web Carnaval de Cádiz", "Permite la gestión integral del concurso de agrupaciones y conserva el archivo histórico del Carnaval.")
-    System(pago, "Pasarela de Pago", "Pasarela que gestiona el pago de la fianza y su posterior reembolso")
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
 
-    Rel(aficionado, sistemaCarnaval, "Consulta resultados, letras, fichas y calendario", "HTTPS")
-    Rel(agrupacion, sistemaCarnaval, "Tramita inscripción y gestiona miembros", "HTTPS")
-    Rel(jurado, sistemaCarnaval, "Registra puntuaciones de actuaciones", "HTTPS")
-    Rel(admin, sistemaCarnaval, "Administra ediciones, jornadas, sorteos y archivo", "HTTPS")
-    Rel(sistemaCarnaval, pago, "Pago de fianza")
+    Boundary(b1, "Usuarios del Sistema", "Roles principales") {
+        Person(aficionado, "Aficionado / Investigador", "Consulta catálogo, fichas,<br/>calendario y memoria histórica.")
+        Person(agrupacion, "Participante / Agrupación", "Gestiona inscripciones,<br/>miembros y pago de fianza.")
+        Person(jurado, "Jurado", "Evalúa actuaciones y<br/>emite puntuaciones.")
+        Person(admin, "Personal Municipal", "Configura ediciones, sorteos<br/>y valida archivos.")
+    }
+
+    System(sistemaCarnaval, "Plataforma Web Carnaval de Cádiz", "Gestión integral del concurso<br/>y archivo histórico del Carnaval.")
+    
+    System_Ext(pago, "Pasarela de Pago", "Servicio externo para procesamiento<br/>y validación de fianzas.")
+
+    Rel_D(aficionado, sistemaCarnaval, "Consulta datos y resultados", "HTTPS")
+    Rel_D(agrupacion, sistemaCarnaval, "Tramita inscripción", "HTTPS")
+    Rel_D(jurado, sistemaCarnaval, "Registra puntuaciones", "HTTPS")
+    Rel_D(admin, sistemaCarnaval, "Administra el sistema", "HTTPS")
+
+    Rel_R(sistemaCarnaval, pago, "Procesa fianza", "HTTPS / REST API")
 
 ```

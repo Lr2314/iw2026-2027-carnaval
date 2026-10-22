@@ -1,4 +1,4 @@
-package com.example.carnaval.views;
+package com.iwcarnaval.views;
 
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Paragraph;

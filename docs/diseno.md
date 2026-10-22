@@ -62,13 +62,13 @@ C4Container
         Container(storage, "Almacenamiento de Archivos", "AWS S3", "Almacena documentación adjunta de inscripciones y archivos multimedia/documentales del histórico.")
     }
 
-    Rel(aficionado, frontoffice, "Navega y busca en el archivo", "HTTPS")
-    Rel(agrupacion, backoffice, "Inscribe agrupación y componentes", "HTTPS / Auth")
+    Rel(aficionado, frontoffice, "Navega y busca<br/> en el archivo", "HTTPS")
+    Rel(agrupacion, backoffice, "Inscribe agrupación <br/>y componentes", "HTTPS / Auth")
     Rel(jurado, backoffice, "Introduce puntuaciones por actuación", "HTTPS / Auth")
     Rel(admin, backoffice, "Gestiona ediciones, jornadas y valideces", "HTTPS / Auth")
 
-    Rel(frontoffice, backend, "Consume servicios y datos del dominio", "Java API / Spring Service")
-    Rel(backoffice, backend, "Ejecuta operaciones del concurso y evaluación", "Java API / Spring Service")
+    Rel(frontoffice, backend, "Consume servicios y <br/>datos del dominio", "<br/>[Java API /<br/> Spring Service")
+    Rel(backoffice, backend, "Ejecuta operaciones del <br/>concurso y evaluación", "Java API / Spring Service")
 
     Rel(backend, database, "Lee y escribe datos del modelo de dominio", "JPA / Hibernate / JDBC")
     Rel(backend, storage, "Guarda y recupera documentos/archivos", "AWS SDK")
@@ -89,12 +89,12 @@ C4Container
     UpdateElementStyle(storage, $fontColor="#f6f0ed", $bgColor="#bbb193", $borderColor="#bbb193")
 
     %% Estilos de Conexiones
-    UpdateRelStyle(aficionado, frontoffice, $textColor="#f6f0ed", $lineColor="#c2948a")
-    UpdateRelStyle(agrupacion, backoffice, $textColor="#f6f0ed", $lineColor="#c2948a")
+    UpdateRelStyle(aficionado, frontoffice, $textColor="#f6f0ed", $lineColor="#c2948a", $offsetX="-80")
+    UpdateRelStyle(agrupacion, backoffice, $textColor="#f6f0ed", $lineColor="#c2948a", $offsetX="-100")
     UpdateRelStyle(jurado, backoffice, $textColor="#f6f0ed", $lineColor="#c2948a")
     UpdateRelStyle(admin, backoffice, $textColor="#f6f0ed", $lineColor="#c2948a")
-    UpdateRelStyle(frontoffice, backend, $textColor="#f6f0ed", $lineColor="#c2948a")
-    UpdateRelStyle(backoffice, backend, $textColor="#f6f0ed", $lineColor="#c2948a")
+    UpdateRelStyle(frontoffice, backend, $textColor="#f6f0ed", $lineColor="#c2948a", $offsetX="-210", $offsetY="-40")
+    UpdateRelStyle(backoffice, backend, $textColor="#f6f0ed", $lineColor="#c2948a", $offsetX="-60", $offsetY="-30")
     UpdateRelStyle(backend, database, $textColor="#f6f0ed", $lineColor="#e8871e")
     UpdateRelStyle(backend, storage, $textColor="#f6f0ed", $lineColor="#e8871e")
 ```

@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.example</groupId>
+    <groupId>com.iwcarnaval</groupId>
     <artifactId>iw2026-2027-carnaval</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>iw2026-2027-carnaval</name>

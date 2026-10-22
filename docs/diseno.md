@@ -12,20 +12,24 @@ C4Context
         Person(admin, "Personal Municipal", "Configura ediciones, sorteos<br/>y valida archivos.")
     }
 
+    System_Ext(pago, "Pasarela de Pago", "Servicio externo para procesamiento<br/>y validación de fianzas.")
+    System_Ext(email, "Sistema de notificaciones", "Envía notificaciones a los usuarios via correo electrónico")
+
+
     System(sistemaCarnaval, "Plataforma Web Carnaval de Cádiz", "Gestión integral del concurso<br/>y archivo histórico del Carnaval.")
     
-    System_Ext(pago, "Pasarela de Pago", "Servicio externo para procesamiento<br/>y validación de fianzas.")
-
     Rel_D(aficionado, sistemaCarnaval, "Consulta datos <br/>y resultados", "HTTPS")
     Rel_D(agrupacion, sistemaCarnaval, "Tramita inscripción", "HTTPS")
     Rel_D(jurado, sistemaCarnaval, "Registra <br/>puntuaciones", "HTTPS")
     Rel_D(admin, sistemaCarnaval, "Administra el sistema", "HTTPS")
 
     Rel_R(sistemaCarnaval, pago, "Procesa fianza", "HTTPS / REST API")
+    Rel_R(sistemaCarnaval, email, "Utiliza para notificar", "SMTP")
 
     UpdateRelStyle(aficionado, sistemaCarnaval, $textColor="f6f0ed", $lineColor="#c2948a", $offsetX="-15")
     UpdateRelStyle(jurado, sistemaCarnaval, $textColor="#f6f0ed", $lineColor="#c2948a", $offsetX="-20", $offsetY="200")
     UpdateRelStyle(sistemaCarnaval, pago, $textColor="#f6f0ed", $lineColor="#e8871e", $offsetX="-50", $offsetY="10")
+    UpdateRelStyle(sistemaCarnaval, email, $textColor="#f6f0ed", $lineColor="#e8871e", $offsetX="-50", $offsetY="10")
     UpdateRelStyle(admin, sistemaCarnaval, $textColor="f6f0ed", $lineColor="#c2948a", $offsetX="-15")
     UpdateRelStyle(agrupacion, sistemaCarnaval, $textColor="#f6f0ed", $lineColor="#c2948a", $offsetX="-50", $offsetY="-40")
     UpdateElementStyle(jurado, $fontColor="#f6f0ed", $bgColor="#28536b", $borderColor="#28536b")
@@ -34,6 +38,7 @@ C4Context
     UpdateElementStyle(aficionado, $fontColor="#f6f0ed", $bgColor="#28536b", $borderColor="#28536b")
     UpdateElementStyle(sistemaCarnaval, $fontColor="#f6f0ed", $bgColor="#7ea8be", $borderColor="#28536b")
     UpdateElementStyle(pago, $fontColor="#f6f0ed", $bgColor="#bbb193", $borderColor="#bbb193")
+    UpdateElementStyle(email, $fontColor="#f6f0ed", $bgColor="#bbb193", $borderColor="#bbb193")
 
 ```
 ```mermaid

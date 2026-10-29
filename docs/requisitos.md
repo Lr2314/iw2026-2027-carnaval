@@ -71,7 +71,7 @@ title: Diagrama de casos de uso
 usecase-beta
     actor Usuario --> registrarAgrupacion("registrarAgrupación")
     Usuario --> consultarDatos
-    Usuario --> iniciarSesión
+    Usuario --> iniciarSesion("iniciarSesión")
     Usuario --> registrarUsuario
     Usuario --> visualizarUsuario
     Usuario --> modificarUsuario

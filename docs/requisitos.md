@@ -42,7 +42,9 @@ classDiagram
 ```
 ## Propuesta de diagrama
 ```mermaid
+---
 title: Mejor? Diagrama de clases
+---
 classDiagram
     class Edicion {
         +int ano

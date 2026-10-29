@@ -69,6 +69,7 @@ classDiagram
 title: Diagrama de casos de uso
 ---
 usecase-beta
+    direction TD
     actor Usuario --> registrarAgrupacion("registrarAgrupación")
     Usuario --> consultarDatos
     Usuario --> iniciarSesion("iniciarSesión")

@@ -69,7 +69,12 @@ classDiagram
 title: Diagrama de casos de uso
 ---
 usecase-beta
-    actor Usuario --> inscribe("inscribeAgrupación")
+    actor Usuario --> registrarAgrupacion("registrarAgrupación")
     Usuario --> consultarDatos
+    Usuario --> iniciarSesión
+    Usuario --> registrarUsuario
+    Usuario --> visualizarUsuario
+    Usuario --> modificarUsuario
+    Usuario --> eliminarUsuario
     actor Jurado --> puntua("puntúaActuación")
 ```

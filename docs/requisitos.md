@@ -152,12 +152,19 @@ title: Diagrama de casos de uso
 ---
 usecase-beta
     direction TD
-    actor Usuario --> registrarAgrupacion("registrarAgrupación")
-    Usuario --> consultarDatos
-    Usuario --> iniciarSesion("iniciarSesión")
-    Usuario --> registrarUsuario
-    Usuario --> visualizarUsuario
-    Usuario --> modificarUsuario
-    Usuario --> eliminarUsuario
-    actor Jurado --> puntua("puntúaActuación")
+    systemBoundary "Agrupación"
+        crearAgrupacion
+    systemBoundary "Usuario"
+        validarUsuario
+        crearUsuario
+        mostrarUsuario
+        modificarUsuario
+        eliminarUsuario
+    actor Usuario --> crearAgrupacion("Crear Agrupación")
+    Usuario --> validarUsuario("Validar Usuario")
+    Usuario --> crearUsuario("Crear Usuario")
+    Usuario --> mostrarUsuario("Mostrar Usuario")
+    Usuario --> modificarUsuario("Modificar Usuario")
+    Usuario --> eliminarUsuario("Eliminar Usuario")
+    actor Jurado --> puntua("Crear Puntuación")
 ```

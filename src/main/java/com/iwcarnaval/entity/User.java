@@ -17,8 +17,7 @@ public class User {
     private String passwordHash;
     private String role;
 
-    public User() {
-    }
+    public User() {}
 
     public User(String username, String passwordHash, String role) {
         setUsername(username);

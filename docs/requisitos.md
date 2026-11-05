@@ -154,12 +154,14 @@ usecase-beta
     direction TD
     systemBoundary "Agrupación"
         crearAgrupacion
+    end
     systemBoundary "Usuario"
         validarUsuario
         crearUsuario
         mostrarUsuario
         modificarUsuario
         eliminarUsuario
+    end
     actor Usuario --> crearAgrupacion("Crear Agrupación")
     Usuario --> validarUsuario("Validar Usuario")
     Usuario --> crearUsuario("Crear Usuario")

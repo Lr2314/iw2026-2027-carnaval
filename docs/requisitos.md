@@ -153,20 +153,20 @@ title: Diagrama de casos de uso
 usecase-beta
     direction TD
     systemBoundary "Gestión de agrupación"
-        crearAgrupacion
+        crearAgrupacion("Crear Agrupación")
     end
     systemBoundary "Gestión de usuario"
-        validarUsuario
-        crearUsuario
-        mostrarUsuario
-        modificarUsuario
-        eliminarUsuario
+        validarUsuario("Validar Usuario")
+        crearUsuario("Crear Usuario")
+        mostrarUsuario("Mostrar Usuario")
+        modificarUsuario("Modificar Usuario")
+        eliminarUsuario("Eliminar Usuario")
     end
-    actor Usuario --> crearAgrupacion("Crear Agrupación")
-    Usuario --> validarUsuario("Validar Usuario")
-    Usuario --> crearUsuario("Crear Usuario")
-    Usuario --> mostrarUsuario("Mostrar Usuario")
-    Usuario --> modificarUsuario("Modificar Usuario")
-    Usuario --> eliminarUsuario("Eliminar Usuario")
+    actor Usuario --> crearAgrupacion
+    Usuario --> validarUsuario
+    Usuario --> crearUsuario
+    Usuario --> mostrarUsuario
+    Usuario --> modificarUsuario
+    Usuario --> eliminarUsuario
     actor Jurado --> puntua("Crear Puntuación")
 ```

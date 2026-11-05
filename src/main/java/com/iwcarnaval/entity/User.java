@@ -26,33 +26,19 @@ public class User {
         setRole(role);
     }
 
-    public UUID getId() {
-        return id;
-    }
+    public UUID getId() { return id; }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+    public void setUsername(String username) { this.username = username; }
 
-    public String getPasswordHash() {
-        return passwordHash;
-    }
+    public String getPasswordHash() { return passwordHash; }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
-    }
+    public void setPasswordHash(String passwordHash) { this.passwordHash = passwordHash; }
 
-    public String getRole() {
-        return role;
-    }
+    public String getRole() { return role; }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+    public void setRole(String role) { this.role = role; }
 
     @Override
     public boolean equals(Object o) {
@@ -62,7 +48,5 @@ public class User {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
+    public int hashCode() { return Objects.hash(getId()); }
 }

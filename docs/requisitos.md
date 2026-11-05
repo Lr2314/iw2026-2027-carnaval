@@ -152,10 +152,10 @@ title: Diagrama de casos de uso
 ---
 usecase-beta
     direction TD
-    systemBoundary "Agrupación"
+    systemBoundary "Gestión de agrupación"
         crearAgrupacion
     end
-    systemBoundary "Usuario"
+    systemBoundary "Gestión de usuario"
         validarUsuario
         crearUsuario
         mostrarUsuario

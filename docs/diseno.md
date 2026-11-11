@@ -62,6 +62,10 @@ C4Container
         Container(storage, "Almacenamiento de Archivos", "AWS S3", "Almacena documentación adjunta de inscripciones y archivos multimedia/documentales del histórico.")
     }
 
+    System_Ext(pago, "Pasarela de Pago", "Servicio externo para procesamiento y validación de fianzas.")
+    System_Ext(email, "Sistema de Notificaciones", "Envía notificaciones por correo electrónico a los usuarios.")
+
+
     Rel(aficionado, frontoffice, "Navega y busca<br/> en el archivo", "HTTPS")
     Rel(agrupacion, backoffice, "Inscribe agrupación <br/>y componentes", "HTTPS / Auth")
     Rel(jurado, backoffice, "Introduce puntuaciones por actuación", "HTTPS / Auth")

@@ -76,6 +76,8 @@ C4Container
 
     Rel(backend, database, "Lee y escribe datos del modelo de dominio", "JPA / Hibernate / JDBC")
     Rel(backend, storage, "Guarda y recupera documentos/archivos", "AWS SDK")
+    Rel(backend, pago, "Procesa y verifica fianzas", "HTTPS / REST API")
+    Rel(backend, email, "Envía notificaciones e emails", "SMTP")
 
     %% Estilos de Personas (Azul oscuro)
     UpdateElementStyle(aficionado, $fontColor="#f6f0ed", $bgColor="#28536b", $borderColor="#28536b")

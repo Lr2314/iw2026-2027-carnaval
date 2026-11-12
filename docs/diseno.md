@@ -124,3 +124,10 @@ C4Container
     UpdateRelStyle(backend, database, $textColor="#f6f0ed", $lineColor="#e8871e")
     UpdateRelStyle(backend, storage, $textColor="#f6f0ed", $lineColor="#e8871e")
 ```
+## Paquetes
+Seguiremos la siguiente estructura de paquetes
+
+    +--src/main/java/com/iwcarnaval
+    |    +--CarnavalApplication.java
+    |    +--DatosDemo.java
+ 

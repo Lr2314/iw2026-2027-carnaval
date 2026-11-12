@@ -18,6 +18,7 @@ flowchart TB
     S --> R
     R --> DB
     S -. "interfaces" .-> X[PasarelaPago · Notificador]
+end
 C4Context
     title Diagrama de Contexto (C4 - Nivel 1) - Sistema del Concurso y Memoria del Carnaval de Cádiz
 

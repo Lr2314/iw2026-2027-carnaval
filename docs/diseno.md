@@ -1,5 +1,23 @@
 # Diseño de la arquitectura
+Emplearemos una arquitectura por capas con paquetes por funcionalidad
 ```mermaid
+flowchart TB
+    subgraph Presentación [Presentación · Vaadin 25 Flow]
+        V[Vistas @Route · MainLayout · LoginView]
+    end
+    subgraph Negocio [Negocio · Spring]
+        S[Servicios de aplicación · DTO · excepciones de negocio]
+        E[Entidades y objetos valor · reglas del dominio]
+    end
+    subgraph Datos [Datos · Spring Data JPA]
+        R[Repositorios JpaRepository]
+        DB[(PostgreSQL / H2)]
+    end
+    V -- "constructor injection" --> S
+    S --> E
+    S --> R
+    R --> DB
+    S -. "interfaces" .-> X[PasarelaPago · Notificador]
 C4Context
     title Diagrama de Contexto (C4 - Nivel 1) - Sistema del Concurso y Memoria del Carnaval de Cádiz
 

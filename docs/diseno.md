@@ -128,6 +128,17 @@ C4Container
 Seguiremos la siguiente estructura de paquetes
 
     +--src/main/java/com/iwcarnaval
-    |    +--CarnavalApplication.java
-    |    +--DatosDemo.java
- 
+    |    +--CarnavalApplication.java        @SpringBootApplication, tema Aura, beans Clock y RandomGenerator
+    |    +--DatosDemo.java                  CommandLineRunner con datos de ejemplo (perfiles dev y demo)
+    |    +--common/                         EntidadBase, Nota, Email y conversores JPA. BusinessExc. y NotFoundExc.
+    |                                       Notificador y Log
+    |    +--usuario/                        Usuario, Rol, UsuarioService, UsuarioDetailService, SecurityConfig,
+    |                                       UsuariosView
+    |    +--edicion/                        Edicion, PlazoInscripcion, Jornada, Fase, EdicionService, EdicionesView
+    |    +--agrupacion/                     Agrupacion, Persona, Inscripcion, Componente, InscripcionService,
+    |                                       PasarelaPago, AgrupacionesView, InscripcionesView
+    |    +--actuacion/                      Actuacion, PuntuacionJurado, Pieza, SorteoService, PuntuacionService,
+    |                                       RepertorioService, SorteoView, PuntuarView, PiezasView
+    |    +--jurado/                         Jurado, JuradoService, JuradoView
+    |    +--archivo/                        ArchivoService y vistas front-office
+    |    +--views/                          MainLayout, HomeView, LoginView, Etiquetas, Avisos

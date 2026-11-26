@@ -4,10 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- El spring-boot-starter-parent fija las versiones de todas las dependencias de Spring. -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version>
+        <version>4.1.2</version>
         <relativePath/>
     </parent>
 
@@ -15,13 +16,14 @@
     <artifactId>iw2026-2027-carnaval</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>iw2026-2027-carnaval</name>
-    <description>Plataforma del COAC y Archivo del Carnaval de Cádiz</description>
+    <description>Plataforma del concurso y archivo del Carnaval de Cádiz</description>
 
     <properties>
         <java.version>21</java.version>
-        <vaadin.version>24.5.0</vaadin.version>
+        <vaadin.version>25.3.5</vaadin.version>
     </properties>
 
+    <!-- El BOM de Vaadin fija la versión de todos sus artefactos. -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -35,43 +37,77 @@
     </dependencyManagement>
 
     <dependencies>
-        <!-- Vaadin Spring Boot Starter -->
+        <!-- Presentación: Vaadin Flow + Spring MVC + Tomcat -->
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
         </dependency>
 
-        <!-- Spring Data JPA para PostgreSQL -->
+        <!-- Datos: Spring Data JPA + Hibernate -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- Driver de PostgreSQL -->
+        <!-- Jakarta Bean Validation (BeanValidationBinder, @NotBlank...) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- Seguridad: autenticación y autorización -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Base de datos relacional: PostgreSQL en ejecución -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Spring Boot DevTools para recarga rápida -->
+        <!-- H2 en memoria: solo para pruebas y para el perfil "dev" -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Herramientas de desarrollo de Vaadin; optional: no entra en el JAR desplegado -->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-dev</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Pruebas: JUnit 5, AssertJ y Mockito -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Plugin de Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- Plugin de Vaadin -->
+            <!-- Plugin de Vaadin: prepara y empaqueta el front-end (npm + Vite) -->
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
@@ -86,4 +122,30 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- Perfil "production": compila el bundle del front-end para el JAR final.
+         Uso: mvn -Pproduction package -->
+    <profiles>
+        <profile>
+            <id>production</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.vaadin</groupId>
+                        <artifactId>vaadin-maven-plugin</artifactId>
+                        <version>${vaadin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>build-frontend</id>
+                                <goals>
+                                    <goal>build-frontend</goal>
+                                </goals>
+                                <phase>compile</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

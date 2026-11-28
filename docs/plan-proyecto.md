@@ -76,6 +76,7 @@ Para tareas no de código, por consenso del equipo.
 - Resolución de conflictos por mayoría.
 - El trabajo debe estar equilibrado: roles, tareas, *commits* y ediciones de la documentación. Cada integrante
   contribuye a código, pruebas y documentación.
+- Lo que no está registrado en la forja, no consta.
 
 ## Riesgos
 

@@ -24,3 +24,10 @@ public record Email(String valor) {
         }
     }
 
+    /** El correo no tiene un formato válido. */
+    public static class EmailInvalidoException extends BusinessException {
+        public EmailInvalidoException(String valor) {
+            super("Correo no válido: " + valor);
+        }
+    }
+}

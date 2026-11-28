@@ -83,4 +83,6 @@ Para tareas no de código, por consenso del equipo.
 |---|---|---|
 | Requisitos no confirmados con el cliente | Trabajo extra | Lista de preguntas abiertas y supuestos explícitos; validarlos pronto |
 | Dependencias de versiones nuevas (Spring Boot 4, Vaadin 25) | Código que no funciona con ejemplos antiguos | Fijar versiones en el `pom.xml`; contrastar con la documentación de cada versión |
+| Reparto desigual del trabajo | Penalización y defensa débil | Revisión cruzada; rotar tareas; revisar la forja en cada retrospectiva |
+| Despliegue en AWS en los últimos días | Fallo en la defensa | Desplegar una primera versión en el Hito 3 |
 | Datos insuficientes en la defensa | No se pueden probar todas las funciones | Perfil `demo` con datos de ejemplo cargados al arrancar |

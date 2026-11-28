@@ -15,6 +15,18 @@ class NifTest {
     }
 
     @Test
+    void nieValido() {
+        assertThat(Nif.esValido("X1234567L")).isTrue();
+        assertThat(Nif.esValido("X1234567A")).isFalse();
+    }
+
+    @Test
+    void cifValido() {
+        assertThat(Nif.esValido("A58818501")).isTrue();
+        assertThat(Nif.esValido("A58818502")).isFalse();
+    }
+
+    @Test
     void dniConLetraIncorrectaSeRechaza() {
         assertThatThrownBy(() -> new Nif("12345678A")).isInstanceOf(Nif.NifInvalidoException.class);
     }
